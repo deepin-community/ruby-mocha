@@ -1,0 +1,11 @@
+Document: mocha-doc
+Title: Documentation of the Ruby Mocha library
+Author: James Mead et al.
+Abstract: This documentation is generated with YARD from the source of the
+ Mocha library. It contains the API documentation as well as some examples.
+Section: Programming/Ruby
+
+Format: HTML
+Index: /usr/share/doc/ruby-mocha/doc/index.html
+Files: /usr/share/doc/ruby-mocha/doc/*
+

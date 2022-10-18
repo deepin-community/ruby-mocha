@@ -1,0 +1,8 @@
+The documentation provided in the ruby-mocha-doc package is shipped with the
+upstream gem file. It is automatically generated from the source files. In
+order to regenerate it, you can call
+
+	rake -f debian/generate-doc.rake
+
+from the root of the source package. The Rakefile mentionned above is adapted
+from the upstream Rakefile. It requires the following packages: rake, yard

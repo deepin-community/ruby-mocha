@@ -1,0 +1,45 @@
+Source: ruby-mocha
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Paul van Tilburg <paulvt@debian.org>,
+           Cédric Boutillier <boutil@debian.org>
+Build-Depends: debhelper (>= 11~),
+               gem2deb,
+               ruby-introspection,
+               ruby-metaclass,
+               ruby-minitest,
+               ruby-redcarpet,
+               yard
+Standards-Version: 4.2.0
+Homepage: https://gofreerange.com/mocha/docs
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-mocha
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-mocha.git
+XS-Ruby-Versions: all
+Testsuite: autopkgtest-pkg-ruby
+
+Package: ruby-mocha
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby | ruby-interpreter,
+         ruby-metaclass,
+         ${misc:Depends}
+Suggests: ruby-mocha-doc
+Description: Mocking and stubbing library for Ruby
+ Mocha is a mocking and stubbing library with JMock/SchMock syntax, which
+ allows mocking and stubbing of methods on real (non-mock) classes. Mocking and
+ stubbing are techniques used to improve unit testing.
+
+Package: ruby-mocha-doc
+Section: doc
+Architecture: all
+Depends: libjs-jquery,
+         ${misc:Depends}
+Suggests: doc-base,
+          ruby-mocha
+Description: Mocking and stubbing library for Ruby - documentation
+ Mocha is a mocking and stubbing library with JMock/SchMock syntax, which
+ allows mocking and stubbing of methods on real (non-mock) classes. Mocking and
+ stubbing are techniques used to improve unit testing.
+ .
+ This package contains the documentation of the Mocha library.

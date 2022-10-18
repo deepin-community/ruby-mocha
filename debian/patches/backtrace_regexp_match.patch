@@ -1,0 +1,16 @@
+Description: extend regexp matching Mocha's path
+ to include vendorlib for autopkgtest
+Author: Cédric Boutillier <boutil@debian.org>
+Forwarded: not-needed
+Last-Update: 2018-08-19
+
+--- a/test/unit/backtrace_filter_test.rb
++++ b/test/unit/backtrace_filter_test.rb
+@@ -12,6 +12,6 @@
+   end
+ 
+   def test_should_determine_path_for_mocha_lib_directory
+-    assert_match Regexp.new('/lib/$'), BacktraceFilter::LIB_DIRECTORY
++    assert_match Regexp.new("/lib/$|#{RbConfig::CONFIG['vendorlib']}"), BacktraceFilter::LIB_DIRECTORY
+   end
+ end

@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+export GEM2DEB_TEST_RUNNER = --check-dependencies
+
+%:
+	dh $@ --buildsystem=ruby --with ruby
+
+override_dh_installchangelogs:
+	dh_installchangelogs RELEASE.md -O--buildsystem=ruby
+
+override_dh_install:
+	yard --title "Mocha $(DEB_VERSION_UPSTREAM)"
+	dh_install
+	# do not install bin/build-matrix
+	rm -rf debian/ruby-mocha/usr/bin
+
+override_dh_clean:
+	rm -rf doc/ .yardoc/
+	dh_clean
